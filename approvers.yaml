@@ -1,0 +1,21 @@
+# Approvers for the match date in next-match.yaml. Keep in sync with the WhatsApp poll.
+# Do not invent names, phones, or votes. Empty lists mean unknown / not yet filled.
+#
+# Person shape (coming / out / tbd) — objects, not plain strings:
+#   - name: "Example"
+#     phone: null
+#     note: null
+
+min_approvers: 7
+cancel_below: 7
+effective_coming: 0
+coming: []
+out: []
+tbd: []
+poll:
+  title: null
+  option: null
+  cached_at: null
+roast_unapprovers: true
+roast_line: אתם חלשים.
+updated_at: null
