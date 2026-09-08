@@ -3,12 +3,12 @@
 
 date: "2026-09-13"  # YYYY-MM-DD
 weekday: Sunday     # e.g. Saturday
-time: null          # free text, e.g. "evening ~20:30–21:30" or exact time
+time: "evening (start when everyone arrives; typical ~20:30–21:30)"
 host: Distler
 location: אביגדור המאירי 19, קומה 8, דירה 34      # full address
 status: "on"        # unknown | on | cancelled | warn
 group: שלמנים ב50
 poll: null          # poll title / id if known
 poll_option: ראשון (חג)   # which poll option maps to this date
-updated_at: 2026-09-08 16:37 IDT    # ISO datetime with timezone note, e.g. 2026-09-06 15:00 IDT
+updated_at: 2026-09-08 16:38 IDT    # ISO datetime with timezone note, e.g. 2026-09-06 15:00 IDT
 notes: Holiday Sunday (חג).
