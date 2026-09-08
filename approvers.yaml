@@ -8,14 +8,41 @@
 
 min_approvers: 7
 cancel_below: 7
-effective_coming: 0
-coming: []
+effective_coming: 9
+coming:
+  - name: Roy Distler
+    phone: null
+    note: null
+  - name: צחי רפורט
+    phone: null
+    note: null
+  - name: דור חזן
+    phone: null
+    note: null
+  - name: Aviv Levinson
+    phone: "+972 54-246-1315"
+    note: null
+  - name: Matan Amzaleg
+    phone: null
+    note: null
+  - name: יהונתן
+    phone: "+972 54-591-5005"
+    note: null
+  - name: Elad Hornstein
+    phone: null
+    note: null
+  - name: דניאל לוי
+    phone: "+972 52-674-5799"
+    note: null
+  - name: דניאל פוגל
+    phone: null
+    note: null
 out: []
 tbd: []
 poll:
   title: null
-  option: null
-  cached_at: null
+  option: ראשון (חג)
+  cached_at: 2026-09-08 15:28 IDT
 roast_unapprovers: true
 roast_line: אתם חלשים.
-updated_at: null
+updated_at: 2026-09-08 15:28 IDT
