@@ -13,7 +13,10 @@ coming:
   - name: Roy Distler
     phone: null
     note: null
-  - name: צחי רפורט
+  - name: Ran
+    phone: "+972 52-328-3842"
+    note: null
+  - name: צחי רפפורט
     phone: null
     note: null
   - name: דור חזן
@@ -34,15 +37,15 @@ coming:
   - name: דניאל לוי
     phone: "+972 52-674-5799"
     note: null
+out:
   - name: דניאל פוגל
     phone: null
-    note: null
-out: []
+    note: "no longer on ראשון (חג)"
 tbd: []
 poll:
   title: null
   option: ראשון (חג)
-  cached_at: 2026-09-08 15:28 IDT
+  cached_at: 2026-09-12 10:30 IDT
 roast_unapprovers: true
 roast_line: אתם חלשים.
-updated_at: 2026-09-08 15:28 IDT
+updated_at: 2026-09-12 10:30 IDT
