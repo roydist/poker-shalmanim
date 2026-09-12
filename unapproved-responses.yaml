@@ -1,0 +1,105 @@
+# Unapproved-player response state machine.
+# Personal WhatsApp nudges/roasts for people who are in the group but NOT on Coming.
+# Messages are Hebrew, sarcastic, personal. One message per player — never a shared blast.
+#
+# Tie-in to approvers.yaml (the Coming list for the date in next-match.yaml):
+#   Candidate = in the WhatsApp group, and name is NOT in approvers.yaml → coming.
+#   Out / TBD / missing from the poll are still candidates if they are not on Coming.
+#   When a player appears on Coming, set their state here to approved and stop messaging.
+#   Do not invent real שלמנים names, phones, or a match date. Example blocks below are
+#   schema samples only — replace with the real roster later (TODO).
+#
+# Person shape:
+#   - name: "Example"
+#     phone: null
+#     example: true          # drop this flag when swapping in a real player
+#     state: pending         # pending | nudged | roasted | approved
+#     last_event: null
+#     last_messaged_at: null
+#     notes:
+#       nudge: "personal Hebrew line"
+#       roast: "personal Hebrew line"
+
+version: 1
+group: שלמנים ב50
+coming_source: approvers.yaml
+coming_key: coming
+
+# Anyone not in Coming and still in the group is a candidate.
+# Terminal: they show up on Coming → state: approved (stop messaging).
+states:
+  - pending    # not yet messaged
+  - nudged     # got their personal nudge
+  - roasted    # got their personal roast
+  - approved   # terminal — on Coming; do not message
+
+transitions:
+  - from: pending
+    to: nudged
+    on: send_nudge
+  - from: nudged
+    to: roasted
+    on: send_roast
+  - from: [pending, nudged, roasted]
+    to: approved
+    on: player_approved   # fired when they appear on approvers.yaml → coming
+
+# Fallback only. Prefer each player's notes.nudge / notes.roast.
+# {name} is replaced with that player's name at send time.
+default_messages:
+  nudge: |
+    {name} — עדיין לא אישרת. השולחן לא ממתין לנצח.
+  roast: |
+    {name} — אתה חלש.
+
+players:
+  # --- EXAMPLES / TODO: replace with real שלמנים names. Not real members. ---
+  - name: "דוגמה א׳ (TODO)"
+    phone: null
+    example: true
+    state: pending
+    last_event: null
+    last_messaged_at: null
+    notes:
+      nudge: "דוגמה א׳ — הסקר פתוח, אתה סגור. תחליט אם אתה בפנים או שאתה רק צופה מהצד."
+      roast: "דוגמה א׳ — אתה חלש. גם הכסאות כבר בחרו צד."
+
+  - name: "דוגמה ב׳ (TODO)"
+    phone: null
+    example: true
+    state: pending
+    last_event: null
+    last_messaged_at: null
+    notes:
+      nudge: "דוגמה ב׳ — עוד פעם אותו תרחיש? כולם כבר לחצו. אתה עדיין בטיוטה."
+      roast: "דוגמה ב׳ — האגדה אומרת שאתה מגיע. הנתונים אומרים שאתה חלש."
+
+  - name: "דוגמה ג׳ (TODO)"
+    phone: null
+    example: true
+    state: pending
+    last_event: null
+    last_messaged_at: null
+    notes:
+      nudge: "דוגמה ג׳ — 'נראה לי' זה לא אישור. השולחן לא קורא מחשבות."
+      roast: "דוגמה ג׳ — חלש ברמה אולימפית. גם הקופה כבר לא מחכה."
+
+  - name: "דוגמה ד׳ (TODO)"
+    phone: null
+    example: true
+    state: pending
+    last_event: null
+    last_messaged_at: null
+    notes:
+      nudge: "דוגמה ד׳ — ראינו אותך בקבוצה. לא ראינו אותך ב-Coming. זה לא אותו דבר."
+      roast: "דוגמה ד׳ — אתה חלש בשקט. לפחות תהיה חלש בקול ותאשר."
+
+  - name: "דוגמה ה׳ (TODO)"
+    phone: null
+    example: true
+    state: pending
+    last_event: null
+    last_messaged_at: null
+    notes:
+      nudge: "דוגמה ה׳ — המקום לא נשמר בכוח המחשבה. Coming, או תן לאחרים את הכיסא."
+      roast: "דוגמה ה׳ — אתה חלש, והכיסא שלך כבר מחפש בעלים חדש."
